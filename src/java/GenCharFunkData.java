@@ -74,8 +74,9 @@ public class GenCharFunkData {
         out.println("        _GTYPE={");
         (new PropTable(out,"LETTER") { boolean check(char ch) { return Character.isLetter(ch); }}).print(true);
         (new PropTable(out,"DIGIT")  { boolean check(char ch) { return Character.isDigit(ch); }}).print(true);
+        (new PropTable(out,"CONTROL")  { boolean check(char ch) { return Character.isISOControl(ch); }}).print(true);
         (new PropTable(out,"LETTER_NUMBER")  { boolean check(char ch) { return Character.getType(ch)==Character.LETTER_NUMBER; }}).print(true);
-        (new PropTable(out,"OTHER")  { boolean check(char ch) { return !Character.isLetter(ch) && !Character.isDigit(ch) && Character.getType(ch)!=Character.LETTER_NUMBER; }}).print(false);
+        (new PropTable(out,"OTHER")  { boolean check(char ch) { return !Character.isLetter(ch) && !Character.isDigit(ch) && !Character.isISOControl(ch) && Character.getType(ch)!=Character.LETTER_NUMBER; }}).print(false);
         out.println("        },");
     }
 
@@ -84,8 +85,9 @@ public class GenCharFunkData {
             int check(char ch) { 
                 if(Character.isLetter(ch)) { return 1; }
                 else if(Character.isDigit(ch)) { return 2; }
-                else if(Character.getType(ch)==Character.LETTER_NUMBER) { return 3; }
-                else { return 4; }
+                else if(Character.isISOControl(ch)) { return 3; }
+                else if(Character.getType(ch)==Character.LETTER_NUMBER) { return 4; }
+                else { return 5; }
             }
         }).print(true);    
     }
