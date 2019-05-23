@@ -185,11 +185,23 @@ $(function() {'use strict';
                 }
             }
         });
-        test( 'CharFunk isLetterNumber #'+(1+ss), function() { 
+        test( 'CharFunk isControl #'+(1+ss), function() { 
             var ii, ch;
             for(ii=ss; ii<TEST_DATA.GTYPE.length; ii+=LOOP_INCREMENT) {
                 ch=String.fromCharCode(ii);
                 if(TEST_DATA.GTYPE[ii]==3) {
+                    ok( CharFunk.isControl(ch), 'test yes for '+ii);
+                }
+                else {
+                    ok( !CharFunk.isControl(ch), 'test no for '+ii);
+                }
+            }
+        });
+        test( 'CharFunk isLetterNumber #'+(1+ss), function() { 
+            var ii, ch;
+            for(ii=ss; ii<TEST_DATA.GTYPE.length; ii+=LOOP_INCREMENT) {
+                ch=String.fromCharCode(ii);
+                if(TEST_DATA.GTYPE[ii]==4) {
                     ok( CharFunk.isLetterNumber(ch), 'test yes for '+ii);
                 }
                 else {
