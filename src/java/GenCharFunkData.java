@@ -182,12 +182,12 @@ public class GenCharFunkData {
     public static boolean checkNameMid(char ch) {
         //From the excellent http://mathiasbynens.be/notes/javascript-identifiers:
         //  An identifier must start with $, _, or any character in the Unicode categories 
-        //  “Uppercase letter (Lu)”, “Lowercase letter (Ll)”, “Titlecase letter (Lt)”, 
-        //  “Modifier letter (Lm)”, “Other letter (Lo)”, or “Letter number (Nl)”.    
+        //  "Uppercase letter (Lu)", "Lowercase letter (Ll)", "Titlecase letter (Lt)", 
+        //  "Modifier letter (Lm)", "Other letter (Lo)", or "Letter number (Nl)".    
         //  The rest of the string can contain the same characters, plus any U+200C zero 
         //  width non-joiner characters, U+200D zero width joiner characters, and characters 
-        //  in the Unicode categories “Non-spacing mark (Mn)”, “Spacing combining mark (Mc)”, 
-        //  “Decimal digit number (Nd)”, or “Connector punctuation (Pc)”.
+        //  in the Unicode categories "Non-spacing mark (Mn)", "Spacing combining mark (Mc)", 
+        //  "Decimal digit number (Nd)", or "Connector punctuation (Pc)".
 
         return ch=='$' || ch=='_' 
             || Character.isLetterOrDigit(ch) 

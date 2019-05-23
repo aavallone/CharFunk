@@ -17,7 +17,7 @@ CharFunk.isMirrored('\u2039'); //true - that's a Single Left-pointing Angle Quot
 
 //Is this string valid JavaScript Identifier?
 CharFunk.isValidName('Apple');          //true
-CharFunk.isValidName('تفاحة');          //true - that's the Arabic word for apple
+CharFunk.isValidName('ت�?احة');          //true - that's the Arabic word for apple
 CharFunk.isValidName('Apple Dumpling'); //false
 CharFunk.isValidName('function');       //true
 CharFunk.isValidName('function',true);  //false - when that second argument is set truthy it means we want to avoid reserved keywords
@@ -33,7 +33,7 @@ CharFunk.replaceMatches('جمهورية مصر العربية',function(ch) {
     },'_'); //will return 'جمهورية_مصر_العربية'
 
 //Find the position of last uppercase letter in the string
-CharFunk.lastIndexOf('Новые Известия',CharFunk.isUpperCase); //returns 6
+CharFunk.lastIndexOf('�?овые Изве�?ти�?',CharFunk.isUpperCase); //returns 6
 ```
 
 All you need is to download [charFunk-1.1.2.min.js](https://raw.github.com/joelarson4/CharFunk/master/charFunk-1.1.2.min.js) -- that's it, no other dependencies.
@@ -115,6 +115,15 @@ Returns true if provided a length 1 string that is a digit
 
 
 ###CharFunk.isLetter(ch)
+Returns true if provided a length 1 string that is a letter
+
+
+`@param {String} ch` - a length 1 string
+
+`@returns {Boolean}` 
+
+
+###CharFunk.isControl(ch)
 Returns true if provided a length 1 string that is a letter
 
 
