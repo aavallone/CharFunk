@@ -124,7 +124,7 @@ Returns true if provided a length 1 string that is a letter
 
 
 ###CharFunk.isControl(ch)
-Returns true if provided a length 1 string that is a letter
+Returns true if provided a length 1 string that is a control character
 
 
 `@param {String} ch` - a length 1 string
@@ -210,15 +210,6 @@ This is a bit more restrictive than browsers tend to be, using the actual rules 
 
 ###CharFunk.isWhitespace(ch)
 Returns true if provided a length 1 string that is a whitespace character
-
-
-`@param {String} ch` - a length 1 string
-
-`@returns {Boolean}` 
-
-
-###CharFunk.isControl(ch)
-Returns true if provided a length 1 string that is a control character
 
 
 `@param {String} ch` - a length 1 string
