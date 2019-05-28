@@ -17,7 +17,7 @@ CharFunk.isMirrored('\u2039'); //true - that's a Single Left-pointing Angle Quot
 
 //Is this string valid JavaScript Identifier?
 CharFunk.isValidName('Apple');          //true
-CharFunk.isValidName('ت�?احة');          //true - that's the Arabic word for apple
+CharFunk.isValidName('ØªÙ?Ø§Ø­Ø©');          //true - that's the Arabic word for apple
 CharFunk.isValidName('Apple Dumpling'); //false
 CharFunk.isValidName('function');       //true
 CharFunk.isValidName('function',true);  //false - when that second argument is set truthy it means we want to avoid reserved keywords
@@ -28,12 +28,12 @@ CharFunk.replaceMatches('What will come out?',function(ch) {
   },'_'); //will return 'What_will_come_out_'
   
 //OK, you could do that with JavaScript regex easily enough, but you could not do this:
-CharFunk.replaceMatches('جمهورية مصر العربية',function(ch) {
+CharFunk.replaceMatches('Ø¬Ù…Ù‡ÙˆØ±ÙŠØ© Ù…ØµØ± Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©',function(ch) {
     return !CharFunk.isLetterOrDigit(ch);
-    },'_'); //will return 'جمهورية_مصر_العربية'
+    },'_'); //will return 'Ø¬Ù…Ù‡ÙˆØ±ÙŠØ©_Ù…ØµØ±_Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©'
 
 //Find the position of last uppercase letter in the string
-CharFunk.lastIndexOf('�?овые Изве�?ти�?',CharFunk.isUpperCase); //returns 6
+CharFunk.lastIndexOf('Ð?Ð¾Ð²Ñ‹Ðµ Ð˜Ð·Ð²ÐµÑ?Ñ‚Ð¸Ñ?',CharFunk.isUpperCase); //returns 6
 ```
 
 All you need is to download [charFunk-1.1.2.min.js](https://raw.github.com/joelarson4/CharFunk/master/charFunk-1.1.2.min.js) -- that's it, no other dependencies.
@@ -210,6 +210,15 @@ This is a bit more restrictive than browsers tend to be, using the actual rules 
 
 ###CharFunk.isWhitespace(ch)
 Returns true if provided a length 1 string that is a whitespace character
+
+
+`@param {String} ch` - a length 1 string
+
+`@returns {Boolean}` 
+
+
+###CharFunk.isControl(ch)
+Returns true if provided a length 1 string that is a control character
 
 
 `@param {String} ch` - a length 1 string
